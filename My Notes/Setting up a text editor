@@ -1,0 +1,24 @@
+I am using the "atom" as my web editor.
+
+basicly, if you are not using node.js, so you are using the embeded JS interpretor inside of a web browser. 
+So, in your project folder, you are going to have three main files:
+ * JS files
+ * CSS files
+ * HTML files
+
+
+you need to refrece to all of your JS codes in your HTML file (most commenly the mail html file is name index.html).
+and then you need to open the index.html in a browser in order to see the result of your project.
+so every time you edit your code you need to save the project and refresh the webpage in order to see the final result.
+sounds kind of frustrating. 
+But I suggest some thing more professional. you can run your own live-server. the only thing you need to do is to search for
+setting up the live server on atom. for exmaple this video is a very simple and staright forward one: https://www.youtube.com/watch?v=0Xy3yDDY4IE
+
+
+you need to install "atom-live-server" and then press "ctrl + shift + p", and in the prompt box search for the 'server'. then choose the port that you want to open the server on. thats it. now in the opened browser, go and open the index.html.
+now every time you change your code and save it, the browser will be updated and you will be able to find the result of your code
+
+
+
+have a nice exploration!
+
