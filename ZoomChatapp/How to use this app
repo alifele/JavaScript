@@ -1,0 +1,28 @@
+open a terminal in the root directory and run:
+peerjs --port 3001
+
+
+then open an other terminal and run:
+npm run devStart
+
+
+
+now you can open a browser and type:
+localhost:3000
+
+then you will see that a random IP address will be added to your localhost:3000
+
+if you type the full url on a new tab, then the new user will be added to the conversation.
+
+
+
+this app is created with this toturial:
+https://www.youtube.com/watch?v=DvlyzDZDEq4&t=215s
+
+
+
+
+++++++++ How to connect from other devices +++++++++++
+suppose that you are connecting to a router that gives you the ip address 192.168.43.43
+like the as it was, you still need to run localhost:3000 on your own devices. But others that want to connect to your chatroom, should type:
+192.168.43.43/"THE EXACT RANDOM NUMBER OF YOUR CHATROOM URL TAIL"

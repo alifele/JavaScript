@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+<body>
+  <h1>This is the Global Waring</h1>
+  <p>In this chart, you can see that
+  how the average temperature changed over years</p>
+
+  <canvas id="Chart" width="200" height="70"></canvas>
+
+  <script type="text/javascript">
+    plotter();
+    async function plotter() {
+    result = await getData();
+    var ctx = document.getElementById('Chart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: result.Year,
+        datasets: [{
+          label: 'Average Global Temprature (Difference from mean)',
+          data: result.Temp,
+          fill: false,
+          backgroundColor: 'rgba(100, 100, 130, 0.4)',
+          borderColor:'rgba(50, 99, 132, 1)',
+          borderWidth: 1.2
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  }
+
+    async function getData() {
+      const Year = [];
+      const Temp = [];
+      const responce = await fetch('ZonAnn.Ts+dSST.csv');
+      const table = await responce.text();
+      const rows  = table.split('\n').slice(1);
+      rows.forEach(elt => {
+        const raw = elt.split(',');
+        const year = raw[0];
+        const temp = raw[1];
+        Year.push(year);
+        Temp.push(temp);
+        console.log(year, temp);
+      });
+
+      return {Year, Temp};
+    }
+
+
+  </script>
+</body>
+</html>

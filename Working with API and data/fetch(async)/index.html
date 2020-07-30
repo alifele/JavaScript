@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <img src="" id='mit' width="400">
+  <h1>Hello there</h1>
+  <script type="text/javascript">
+
+  fetchMIT().then(blob =>{
+    document.getElementById('mit').src = URL.createObjectURL(blob);
+  }).catch(err => console.log(err));
+
+
+  async function fetchMIT(){
+    const response = await fetch('mit.jpeg');
+    const blob_ = await response.blob();
+    return blob_;
+  }
+
+  </script>
+</body>
+</html>
